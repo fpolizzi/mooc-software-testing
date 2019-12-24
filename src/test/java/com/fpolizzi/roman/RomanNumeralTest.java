@@ -12,4 +12,12 @@ public class RomanNumeralTest {
 
         Assertions.assertEquals(1,result);
     }
+
+    @Test
+    void numberWithManyDigits() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("VIII");
+
+        Assertions.assertEquals(8, result);
+    }
 }
