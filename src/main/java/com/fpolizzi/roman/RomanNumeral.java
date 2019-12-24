@@ -1,16 +1,35 @@
 package com.fpolizzi.roman;
 
-public class RomanNumeral {
-    int i = 1;
-    int v = 5;
-    int x = 10;
-    int l = 50;
-    int c = 100;
-    int d = 500;
-    int m = 1000;
+import java.util.HashMap;
+import java.util.Map;
 
-    public int convert(String romanNumeral) {
-        System.out.println(romanNumeral);
-        return 0;
+public class RomanNumeral {
+    private static Map<Character, Integer> map;
+
+    static {
+        map = new HashMap<Character, Integer>();
+        map.put('I', 1);
+        map.put('V', 5);
+        map.put('X', 10);
+        map.put('L', 50);
+        map.put('C', 100);
+        map.put('D', 500);
+        map.put('M', 1000);
+    }
+
+    public int convert(String s) {
+
+        int convertedNumber = 0;
+        for(int i = 0; i < s.length(); i++) {
+            int currentNumber = map.get(s.charAt(i));
+            int next = i+1 < s.length() ? map.get(s.charAt(i+1)) : 0;
+
+            if(currentNumber >= next)
+                convertedNumber += currentNumber;
+            else
+                convertedNumber -= currentNumber;
+        }
+
+        return convertedNumber;
     }
 }
