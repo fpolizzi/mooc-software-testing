@@ -6,6 +6,7 @@ public class RomanNumeralTest {
     public static void main(String[] args) {
         RomanNumeral roman = new RomanNumeral();
 
-        int test = roman.convert("IV");
+        int test = roman.convert("VII");
+        System.out.println(test);
     }
 }
