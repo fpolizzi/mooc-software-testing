@@ -20,4 +20,12 @@ public class RomanNumeralTest {
 
         Assertions.assertEquals(8, result);
     }
+
+    @Test
+    void numberWithSubtractiveNotation() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("IV");
+
+        Assertions.assertEquals(4, result);
+    }
 }
