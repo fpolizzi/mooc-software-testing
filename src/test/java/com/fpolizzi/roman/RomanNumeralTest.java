@@ -1,12 +1,15 @@
 package com.fpolizzi.roman;
 
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 public class RomanNumeralTest {
-    RomanNumeral roman = new RomanNumeral();
 
-    public static void main(String[] args) {
+    @Test
+    void singleNumber() {
         RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("I");
 
-        int test = roman.convert("VII");
-        System.out.println(test);
+        Assertions.assertEquals(1,result);
     }
 }
