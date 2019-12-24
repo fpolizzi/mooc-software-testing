@@ -10,7 +10,7 @@ public class RomanNumeralTest {
         RomanNumeral roman = new RomanNumeral();
         int result = roman.convert("I");
 
-        Assertions.assertEquals(1,result);
+        Assertions.assertEquals(1, result);
     }
 
     @Test
@@ -27,5 +27,13 @@ public class RomanNumeralTest {
         int result = roman.convert("IV");
 
         Assertions.assertEquals(4, result);
+    }
+
+    @Test
+    public void numberWithAndWithoutSubtractiveNotation() {
+        RomanNumeral roman = new RomanNumeral();
+        int result = roman.convert("XLIV");
+
+        Assertions.assertEquals(44, result);
     }
 }
