@@ -24,4 +24,9 @@ public class LeapYearTest {
         Assertions.assertFalse(ly.isLeapYear(1500));
     }
 
+    @Test
+    public void nonLeapYears() {
+        LeapYear ly = new LeapYear();
+        Assertions.assertFalse(ly.isLeapYear(2017));
+    }
 }
